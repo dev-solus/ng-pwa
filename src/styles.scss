@@ -1,1 +1,145 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+/* Baby Sleep E-commerce App - Custom Theme Configuration */
+@theme {
+  /* Primary Colors */
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+
+  /* Baby Pink Theme */
+  --color-baby-pink-50: #fdf2f8;
+  --color-baby-pink-100: #fce7f3;
+  --color-baby-pink-200: #fbcfe8;
+  --color-baby-pink-300: #f9a8d4;
+  --color-baby-pink-400: #f472b6;
+  --color-baby-pink-500: #ec4899;
+  --color-baby-pink-600: #db2777;
+  --color-baby-pink-700: #be185d;
+  --color-baby-pink-800: #9d174d;
+  --color-baby-pink-900: #831843;
+
+  /* Baby Blue Theme */
+  --color-baby-blue-50: #eff6ff;
+  --color-baby-blue-100: #dbeafe;
+  --color-baby-blue-200: #bfdbfe;
+  --color-baby-blue-300: #93c5fd;
+  --color-baby-blue-400: #60a5fa;
+  --color-baby-blue-500: #3b82f6;
+  --color-baby-blue-600: #2563eb;
+  --color-baby-blue-700: #1d4ed8;
+  --color-baby-blue-800: #1e40af;
+  --color-baby-blue-900: #1e3a8a;
+
+  /* Baby Cream Theme */
+  --color-baby-cream-50: #fefce8;
+  --color-baby-cream-100: #fef3c7;
+  --color-baby-cream-200: #fde68a;
+  --color-baby-cream-300: #fcd34d;
+  --color-baby-cream-400: #fbbf24;
+  --color-baby-cream-500: #f59e0b;
+  --color-baby-cream-600: #d97706;
+  --color-baby-cream-700: #b45309;
+  --color-baby-cream-800: #92400e;
+  --color-baby-cream-900: #78350f;
+
+  /* Baby Green Theme */
+  --color-baby-green-50: #ecfdf5;
+  --color-baby-green-100: #d1fae5;
+  --color-baby-green-200: #a7f3d0;
+  --color-baby-green-300: #6ee7b7;
+  --color-baby-green-400: #34d399;
+  --color-baby-green-500: #10b981;
+  --color-baby-green-600: #059669;
+  --color-baby-green-700: #047857;
+  --color-baby-green-800: #065f46;
+  --color-baby-green-900: #064e3b;
+
+  /* Typography */
+  --font-family-sans: Inter, system-ui, sans-serif;
+
+  /* Custom Spacing */
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+  --spacing-100: 25rem;
+  --spacing-112: 28rem;
+  --spacing-128: 32rem;
+
+  /* Border Radius */
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+
+  /* Backdrop Blur */
+  --backdrop-blur-xs: 2px;
+
+  /* Box Shadows */
+  --shadow-soft: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+  --shadow-soft-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  /* Custom Animations */
+  --animate-fade-in: fadeIn 0.5s ease-in-out;
+  --animate-slide-in-right: slideInRight 0.3s ease-out;
+  --animate-slide-out-right: slideOutRight 0.3s ease-in;
+  --animate-bounce-gentle: bounceGentle 2s infinite;
+  --animate-pulse-soft: pulseSoft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom Keyframes */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes slideOutRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes bounceGentle {
+  0%, 100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Custom Component Classes */
+.btn-primary {
+  @apply bg-primary-500 hover:bg-primary-600 text-white font-medium px-4 py-2 rounded-lg transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-baby-blue-100 hover:bg-baby-blue-200 text-baby-blue-800 font-medium px-4 py-2 rounded-lg transition-colors duration-200;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-soft border border-gray-100 p-6;
+}
+
+.card-hover {
+  @apply card hover:shadow-soft-lg transition-shadow duration-300;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+}

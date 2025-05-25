@@ -1,0 +1,104 @@
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a routerLink="/" class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-gray-900">BabySleep</span>
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a routerLink="/" routerLinkActive="text-primary-600" [routerLinkActiveOptions]="{exact: true}"
+           class="text-gray-700 hover:text-primary-600 font-medium transition-colors">
+          Home
+        </a>
+        <a routerLink="/products" routerLinkActive="text-primary-600"
+           class="text-gray-700 hover:text-primary-600 font-medium transition-colors">
+          Products
+        </a>
+        <a href="#" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">
+          About
+        </a>
+        <a href="#" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">
+          Contact
+        </a>
+      </nav>
+
+      <!-- Search -->
+      <div class="hidden md:flex flex-1 max-w-md mx-8">
+        <div class="relative w-full">
+          <input
+            type="text"
+            placeholder="Search baby sleep products..."
+            (input)="onSearch($event)"
+            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+          />
+          <svg class="absolute left-3 top-2.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Cart and Mobile Menu -->
+      <div class="flex items-center space-x-4">
+        <!-- Cart Button -->
+        <button
+          (click)="openBasket()"
+          class="relative p-2 text-gray-700 hover:text-primary-600 transition-colors"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 1.5M7 13l-1.5 1.5M20 20a1 1 0 11-2 0 1 1 0 012 0zM9 20a1 1 0 11-2 0 1 1 0 012 0z"/>
+          </svg>
+          <span
+            *ngIf="basketSummary && basketSummary.itemCount > 0"
+            class="absolute -top-1 -right-1 bg-primary-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+          >
+            {{ basketSummary.itemCount }}
+          </span>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button
+          (click)="toggleMobileMenu()"
+          class="md:hidden p-2 text-gray-700 hover:text-primary-600 transition-colors"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div *ngIf="mobileMenuOpen" class="md:hidden border-t border-gray-200 py-4">
+      <div class="flex flex-col space-y-4">
+        <!-- Mobile Search -->
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Search products..."
+            (input)="onSearch($event)"
+            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+          />
+          <svg class="absolute left-3 top-2.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+
+        <!-- Mobile Navigation Links -->
+        <a routerLink="/" (click)="mobileMenuOpen = false" class="text-gray-700 hover:text-primary-600 font-medium">Home</a>
+        <a routerLink="/products" (click)="mobileMenuOpen = false" class="text-gray-700 hover:text-primary-600 font-medium">Products</a>
+        <a href="#" class="text-gray-700 hover:text-primary-600 font-medium">About</a>
+        <a href="#" class="text-gray-700 hover:text-primary-600 font-medium">Contact</a>
+      </div>
+    </div>
+  </div>
+</header>
