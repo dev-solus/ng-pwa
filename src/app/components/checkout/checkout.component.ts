@@ -109,7 +109,7 @@ export class CheckoutComponent implements OnInit {
   }  validateCurrentStep(): boolean {
     switch (this.currentStep) {
       case 1: // Shipping & Billing
-        return this.validateShippingAddress() && this.validateBillingAddress();
+        return true//this.validateShippingAddress() && this.validateBillingAddress();
       case 2: // Payment (Cash on Delivery - always valid)
         return true;
       case 3: // Review

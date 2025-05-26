@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { BasketService } from '../../services/basket.service';
 import { Product } from '../../models/product.model';
+import AOS from 'aos';
 
 interface Testimonial {
   name: string;
@@ -27,27 +28,26 @@ interface Partner {
 export class HomeComponent implements OnInit {
   bestProducts: Product[] = [];
   searchTerm = '';
-
   testimonials: Testimonial[] = [
     {
-      name: 'Sarah Johnson',
-      location: 'New York, NY',
+      name: 'Sarah Dubois',
+      location: 'Paris, France',
       rating: 5,
-      comment: 'The organic mattress has made such a difference in my baby\'s sleep. Highly recommend!',
+      comment: 'Le matelas biologique a fait une énorme différence dans le sommeil de mon bébé. Je le recommande vivement !',
       avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b76c?w=100&h=100&fit=crop&crop=face'
     },
     {
-      name: 'Michael Chen',
-      location: 'San Francisco, CA',
+      name: 'Michael Durand',
+      location: 'Lyon, France',
       rating: 5,
-      comment: 'Amazing quality and fast shipping. Our little one loves the sound machine!',
+      comment: 'Qualité exceptionnelle et livraison rapide. Notre petit bout adore la machine à sons !',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'
     },
     {
-      name: 'Emily Rodriguez',
-      location: 'Austin, TX',
+      name: 'Émilie Martin',
+      location: 'Marseille, France',
       rating: 5,
-      comment: 'The convertible crib is beautiful and will grow with our daughter. Perfect investment!',
+      comment: 'Le lit évolutif est magnifique et grandira avec notre fille. Un investissement parfait !',
       avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face'
     }
   ];
@@ -63,9 +63,13 @@ export class HomeComponent implements OnInit {
     private basketService: BasketService,
     private router: Router
   ) {}
-
   ngOnInit(): void {
     this.loadBestProducts();
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true
+    });
   }
 
   loadBestProducts(): void {

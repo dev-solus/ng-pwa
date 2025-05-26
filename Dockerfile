@@ -10,7 +10,6 @@ COPY src src
 COPY .editorconfig .
 COPY angular.json .
 # COPY server.ts .
-COPY transloco.config.js .
 COPY tailwind.config.js .
 COPY tsconfig*.json ./
 
