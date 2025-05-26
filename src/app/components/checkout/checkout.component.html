@@ -308,51 +308,52 @@
             </button>
           </div>
         </div>
-      </div>      <!-- Order Summary Sidebar -->
-      <div class="lg:col-span-1">
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 sticky top-4">
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Récapitulatif de Commande</h3>
+      </div>
 
-          <!-- Items -->
-          <div class="space-y-3 mb-4">
+      <!-- Order Summary Sidebar -->
+      <div class="lg:col-span-1">
+        <div class="bg-white rounded-lg shadow-sm p-6 sticky top-4">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Order Summary</h3>
+
+          <!-- Items -->          <div class="space-y-3 mb-4">
             <div *ngFor="let item of basketItems" class="flex items-center space-x-3">
               <img [src]="item.product.images[0]" [alt]="item.product.name" class="w-12 h-12 object-cover rounded">
               <div class="flex-1 min-w-0">
-                <p class="text-sm font-medium text-gray-900 dark:text-white truncate">{{ item.product.name }}</p>
-                <p class="text-sm text-gray-500 dark:text-gray-400">Qté: {{ item.quantity }}</p>
+                <p class="text-sm font-medium text-gray-900 truncate">{{ item.product.name }}</p>
+                <p class="text-sm text-gray-500">Qty: {{ item.quantity }}</p>
               </div>
-              <p class="text-sm font-medium text-gray-900 dark:text-white">{{ item.product.price * item.quantity }}€</p>
+              <p class="text-sm font-medium text-gray-900">${{ item.product.price * item.quantity }}</p>
             </div>
           </div>
 
           <!-- Totals -->
-          <div class="border-t border-gray-200 dark:border-gray-600 pt-4 space-y-2">
+          <div class="border-t border-gray-200 pt-4 space-y-2">
             <div class="flex justify-between text-sm">
-              <span class="text-gray-600 dark:text-gray-400">Sous-total</span>
-              <span class="text-gray-900 dark:text-white">{{ subtotal.toFixed(2) }}€</span>
+              <span class="text-gray-600">Subtotal</span>
+              <span class="text-gray-900">${{ subtotal.toFixed(2) }}</span>
             </div>
             <div class="flex justify-between text-sm">
-              <span class="text-gray-600 dark:text-gray-400">Livraison</span>
-              <span class="text-gray-900 dark:text-white">{{ shipping.toFixed(2) }}€</span>
+              <span class="text-gray-600">Shipping</span>
+              <span class="text-gray-900">${{ shipping.toFixed(2) }}</span>
             </div>
             <div class="flex justify-between text-sm">
-              <span class="text-gray-600 dark:text-gray-400">TVA</span>
-              <span class="text-gray-900 dark:text-white">{{ tax.toFixed(2) }}€</span>
+              <span class="text-gray-600">Tax</span>
+              <span class="text-gray-900">${{ tax.toFixed(2) }}</span>
             </div>
-            <div class="border-t border-gray-200 dark:border-gray-600 pt-2">
+            <div class="border-t border-gray-200 pt-2">
               <div class="flex justify-between text-base font-medium">
-                <span class="text-gray-900 dark:text-white">Total</span>
-                <span class="text-gray-900 dark:text-white">{{ total.toFixed(2) }}€</span>
+                <span class="text-gray-900">Total</span>
+                <span class="text-gray-900">${{ total.toFixed(2) }}</span>
               </div>
             </div>
           </div>
 
           <!-- Security Notice -->
-          <div class="mt-6 flex items-center text-sm text-gray-500 dark:text-gray-400">
+          <div class="mt-6 flex items-center text-sm text-gray-500">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
             </svg>
-            Commande sécurisée
+            Secure checkout
           </div>
         </div>
       </div>

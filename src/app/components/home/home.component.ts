@@ -30,17 +30,17 @@ export class HomeComponent implements OnInit {
   searchTerm = '';
   testimonials: Testimonial[] = [
     {
-      name: 'Sarah Dubois',
+      name: 'Sarah Dupont',
       location: 'Paris, France',
       rating: 5,
-      comment: 'Le matelas biologique a fait une énorme différence dans le sommeil de mon bébé. Je le recommande vivement !',
+      comment: 'Le matelas bio a fait une énorme différence dans le sommeil de mon bébé. Je le recommande vivement !',
       avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b76c?w=100&h=100&fit=crop&crop=face'
     },
     {
-      name: 'Michael Durand',
+      name: 'Michel Leroy',
       location: 'Lyon, France',
       rating: 5,
-      comment: 'Qualité exceptionnelle et livraison rapide. Notre petit bout adore la machine à sons !',
+      comment: 'Qualité incroyable et livraison rapide. Notre petit ange adore la machine à sons !',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'
     },
     {
@@ -66,9 +66,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.loadBestProducts();
     AOS.init({
-      duration: 1000,
+      duration: 800,
       easing: 'ease-in-out',
-      once: true
+      once: true,
+      offset: 100
     });
   }
 

@@ -109,7 +109,7 @@ export class CheckoutComponent implements OnInit {
   }  validateCurrentStep(): boolean {
     switch (this.currentStep) {
       case 1: // Shipping & Billing
-        return true//this.validateShippingAddress() && this.validateBillingAddress();
+        return this.validateShippingAddress() && this.validateBillingAddress();
       case 2: // Payment (Cash on Delivery - always valid)
         return true;
       case 3: // Review
@@ -207,11 +207,13 @@ export class CheckoutComponent implements OnInit {
       3: 'Vérification de Commande'
     };
     return titles[step as keyof typeof titles] || '';
-  }  getStepIcon(step: number): string {
+  }
+  getStepIcon(step: number): string {
     const icons = {
       1: 'M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2V7zm0 0V5a2 2 0 012-2h6l2 2h6a2 2 0 012 2v2M7 13h10M7 17h4',
-      2: 'M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z',
-      3: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
+      2: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z',
+      3: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
+      4: 'M5 13l4 4L19 7'
     };
     return icons[step as keyof typeof icons] || '';
   }
