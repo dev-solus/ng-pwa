@@ -1,30 +1,28 @@
-<div class="min-h-screen bg-baby-pink-50">
+<div class="min-h-screen bg-baby-pink-50 dark:bg-gray-900">
   <!-- Page Header -->
-  <div class="bg-white shadow-sm">
+  <div class="bg-white dark:bg-gray-800 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
         <div>
-          <h1 class="text-3xl font-bold text-gray-900">Baby Sleep Products</h1>
-          <p class="mt-2 text-gray-600">Discover our complete collection of peaceful sleep solutions</p>
+          <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Produits de Sommeil Bébé</h1>
+          <p class="mt-2 text-gray-600 dark:text-gray-300">Découvrez notre collection complète de solutions de sommeil paisible</p>
         </div>
 
         <!-- Results count and sort -->
         <div class="mt-4 lg:mt-0 flex items-center space-x-4">
-          <span class="text-sm text-gray-500">
-            {{ filteredProducts.length }} {{ filteredProducts.length === 1 ? 'product' : 'products' }}
+          <span class="text-sm text-gray-500 dark:text-gray-400">
+            {{ filteredProducts.length }} {{ filteredProducts.length === 1 ? 'produit' : 'produits' }}
           </span>
 
           <select
             [(ngModel)]="sortBy"
             (change)="onFilterChange()"
-            class="input-field text-sm">
-            <option value="name">Sort by Name</option>
-            <option value="price">Sort by Price</option>
-            <option value="rating">Sort by Rating</option>
-            <option value="newest">Sort by Newest</option>
-          </select>
-
-          <button
+            class="input-field text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600">
+            <option value="name">Trier par Nom</option>
+            <option value="price">Trier par Prix</option>
+            <option value="rating">Trier par Note</option>
+            <option value="newest">Trier par Nouveauté</option>
+          </select>          <button
             (click)="sortOrder = sortOrder === 'asc' ? 'desc' : 'asc'; onFilterChange()"
             class="btn-secondary p-2">
             <svg class="w-4 h-4" [class.rotate-180]="sortOrder === 'desc'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,40 +45,40 @@
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"/>
           </svg>
-          Filters & Search
+          Filtres et Recherche
         </button>
       </div>
 
       <!-- Filters Sidebar -->
       <aside class="lg:col-span-1" [class.hidden]="!showFilters" [class.lg:block]="true">
-        <div class="bg-white rounded-lg shadow-sm p-6 sticky top-4">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 sticky top-4">
           <div class="flex items-center justify-between mb-6">
-            <h3 class="text-lg font-semibold text-gray-900">Filters</h3>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Filtres</h3>
             <button
               (click)="clearFilters()"
-              class="text-sm text-primary-600 hover:text-primary-700">
-              Clear All
+              class="text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">
+              Effacer Tout
             </button>
           </div>
 
           <!-- Search -->
           <div class="mb-6">
-            <label class="block text-sm font-medium text-gray-700 mb-2">Search</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Recherche</label>
             <input
               type="text"
               [(ngModel)]="searchQuery"
               (input)="onFilterChange()"
-              placeholder="Search products..."
-              class="input-field w-full">
+              placeholder="Rechercher des produits..."
+              class="input-field w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600">
           </div>
 
           <!-- Category Filter -->
           <div class="mb-6">
-            <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>            <select
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Catégorie</label>            <select
               [(ngModel)]="selectedCategory"
               (change)="onFilterChange()"
-              class="input-field w-full">
-              <option value="all">All Categories</option>
+              class="input-field w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600">
+              <option value="all">Toutes les Catégories</option>
               <option *ngFor="let category of categories" [value]="category.id">
                 {{ category.name }}
               </option>
@@ -89,12 +87,12 @@
 
           <!-- Brand Filter -->
           <div class="mb-6">
-            <label class="block text-sm font-medium text-gray-700 mb-2">Brand</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Marque</label>
             <select
               [(ngModel)]="selectedBrand"
               (change)="onFilterChange()"
-              class="input-field w-full">
-              <option value="all">All Brands</option>
+              class="input-field w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600">
+              <option value="all">Toutes les Marques</option>
               <option *ngFor="let brand of brands" [value]="brand">{{ brand }}</option>
             </select>
           </div>

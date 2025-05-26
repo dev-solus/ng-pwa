@@ -14,7 +14,7 @@ import { ShippingAddress, BillingAddress, PaymentMethod } from '../../models/use
 })
 export class CheckoutComponent implements OnInit {
   currentStep = 1;
-  totalSteps = 4;
+  totalSteps = 3;
 
   // Basket data
   basketItems: BasketItem[] = [];
@@ -106,16 +106,14 @@ export class CheckoutComponent implements OnInit {
     if (step <= this.currentStep) {
       this.currentStep = step;
     }
-  }
-
-  validateCurrentStep(): boolean {
+  }  validateCurrentStep(): boolean {
     switch (this.currentStep) {
-      case 1: // Shipping
-        return this.validateShippingAddress();
-      case 2: // Billing
-        return this.validateBillingAddress();
-      case 3: // Payment
-        return this.validatePaymentMethod();
+      case 1: // Shipping & Billing
+        return this.validateShippingAddress() && this.validateBillingAddress();
+      case 2: // Payment (Cash on Delivery - always valid)
+        return true;
+      case 3: // Review
+        return true;
       default:
         return true;
     }
@@ -183,17 +181,15 @@ export class CheckoutComponent implements OnInit {
 
     try {
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-
-      // Generate order number
-      this.orderNumber = 'SB' + Date.now();
+      await new Promise(resolve => setTimeout(resolve, 2000));      // Generate order number
+      this.orderNumber = 'BD' + Date.now();
 
       // Clear basket
       this.basketService.clearBasket();
 
       // Show success
       this.orderComplete = true;
-      this.currentStep = 5;
+      this.currentStep = 4;
 
     } catch (error) {
       alert('Order failed. Please try again.');
@@ -204,26 +200,18 @@ export class CheckoutComponent implements OnInit {
 
   continueShopping() {
     this.router.navigate(['/']);
-  }
-
-  getStepTitle(step: number): string {
+  }  getStepTitle(step: number): string {
     const titles = {
-      1: 'Shipping Information',
-      2: 'Billing Address',
-      3: 'Payment Method',
-      4: 'Review Order',
-      5: 'Order Complete'
+      1: 'Informations de Livraison',
+      2: 'Mode de Paiement',
+      3: 'Vérification de Commande'
     };
     return titles[step as keyof typeof titles] || '';
-  }
-
-  getStepIcon(step: number): string {
+  }  getStepIcon(step: number): string {
     const icons = {
       1: 'M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2V7zm0 0V5a2 2 0 012-2h6l2 2h6a2 2 0 012 2v2M7 13h10M7 17h4',
-      2: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
-      3: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z',
-      4: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
-      5: 'M5 13l4 4L19 7'
+      2: 'M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z',
+      3: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
     };
     return icons[step as keyof typeof icons] || '';
   }

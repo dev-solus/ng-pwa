@@ -51,12 +51,11 @@ export class HomeComponent implements OnInit {
       avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face'
     }
   ];
-
   partners: Partner[] = [
-    { name: 'DreamCloud' },
-    { name: 'Snuggle' },
-    { name: 'SleepyTime' },
-    { name: 'CloudSoft' }
+    { name: 'Société Française de Pédiatrie' },
+    { name: 'Association des Pédiatres de France' },
+    { name: 'Centre de Recherche Sommeil Enfant' },
+    { name: 'Institut Français du Sommeil Bébé' }
   ];
 
   constructor(

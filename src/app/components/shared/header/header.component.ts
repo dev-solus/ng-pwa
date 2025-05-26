@@ -15,12 +15,17 @@ import { BasketSummary } from '../../../models/basket.model';
 export class HeaderComponent implements OnInit, OnDestroy {
   basketSummary: BasketSummary | null = null;
   mobileMenuOpen = false;
+  isDarkMode = false;
   private destroy$ = new Subject<void>();
 
   constructor(
     private basketService: BasketService,
     private productService: ProductService
-  ) {}
+  ) {
+    // Check for saved dark mode preference
+    this.isDarkMode = localStorage.getItem('darkMode') === 'true';
+    this.updateDarkMode();
+  }
 
   ngOnInit(): void {
     this.basketService.getBasketSummary()
@@ -49,8 +54,21 @@ export class HeaderComponent implements OnInit, OnDestroy {
   openBasket(): void {
     this.basketService.openSidebar();
   }
-
   toggleMobileMenu(): void {
     this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  toggleDarkMode(): void {
+    this.isDarkMode = !this.isDarkMode;
+    localStorage.setItem('darkMode', this.isDarkMode.toString());
+    this.updateDarkMode();
+  }
+
+  private updateDarkMode(): void {
+    if (this.isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   }
 }

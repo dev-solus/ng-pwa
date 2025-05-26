@@ -1,4 +1,4 @@
-<header class="bg-white shadow-md sticky top-0 z-50">
+<header class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       <!-- Logo -->
@@ -9,49 +9,47 @@
               <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
             </svg>
           </div>
-          <span class="text-xl font-bold text-gray-900">BabySleep</span>
+          <span class="text-xl font-bold text-gray-900 dark:text-white">BébéDodo</span>
         </a>
-      </div>
-
-      <!-- Navigation -->
+      </div>      <!-- Navigation -->
       <nav class="hidden md:flex items-center space-x-8">
-        <a routerLink="/" routerLinkActive="text-primary-600" [routerLinkActiveOptions]="{exact: true}"
-           class="text-gray-700 hover:text-primary-600 font-medium transition-colors">
-          Home
-        </a>
+
         <a routerLink="/products" routerLinkActive="text-primary-600"
-           class="text-gray-700 hover:text-primary-600 font-medium transition-colors">
-          Products
-        </a>
-        <a href="#" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">
-          About
-        </a>
-        <a href="#" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">
-          Contact
+           class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+          Produits
         </a>
       </nav>
 
       <!-- Search -->
       <div class="hidden md:flex flex-1 max-w-md mx-8">
-        <div class="relative w-full">
-          <input
+        <div class="relative w-full">          <input
             type="text"
-            placeholder="Search baby sleep products..."
+            placeholder="Rechercher des produits de sommeil bébé..."
             (input)="onSearch($event)"
-            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
           />
           <svg class="absolute left-3 top-2.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
           </svg>
         </div>
-      </div>
-
-      <!-- Cart and Mobile Menu -->
-      <div class="flex items-center space-x-4">
-        <!-- Cart Button -->
+      </div>      <!-- Cart and Mobile Menu -->
+      <div class="flex items-center space-x-4">        <!-- Dark Mode Toggle -->
         <button
+          (click)="toggleDarkMode()"
+          class="p-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+          [attr.aria-label]="isDarkMode ? 'Activer le mode clair' : 'Activer le mode sombre'"
+        >
+          <svg *ngIf="!isDarkMode" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+          <svg *ngIf="isDarkMode" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+        </button>
+
+        <!-- Cart Button -->        <button
           (click)="openBasket()"
-          class="relative p-2 text-gray-700 hover:text-primary-600 transition-colors"
+          class="relative p-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
         >
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -81,23 +79,18 @@
     <div *ngIf="mobileMenuOpen" class="md:hidden border-t border-gray-200 py-4">
       <div class="flex flex-col space-y-4">
         <!-- Mobile Search -->
-        <div class="relative">
-          <input
+        <div class="relative">          <input
             type="text"
-            placeholder="Search products..."
+            placeholder="Rechercher des produits..."
             (input)="onSearch($event)"
             class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
           />
           <svg class="absolute left-3 top-2.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
           </svg>
-        </div>
-
-        <!-- Mobile Navigation Links -->
-        <a routerLink="/" (click)="mobileMenuOpen = false" class="text-gray-700 hover:text-primary-600 font-medium">Home</a>
-        <a routerLink="/products" (click)="mobileMenuOpen = false" class="text-gray-700 hover:text-primary-600 font-medium">Products</a>
-        <a href="#" class="text-gray-700 hover:text-primary-600 font-medium">About</a>
-        <a href="#" class="text-gray-700 hover:text-primary-600 font-medium">Contact</a>
+        </div>        <!-- Mobile Navigation Links -->
+        <a routerLink="/" (click)="mobileMenuOpen = false" class="text-gray-700 hover:text-primary-600 font-medium">Accueil</a>
+        <a routerLink="/products" (click)="mobileMenuOpen = false" class="text-gray-700 hover:text-primary-600 font-medium">Produits</a>
       </div>
     </div>
   </div>
