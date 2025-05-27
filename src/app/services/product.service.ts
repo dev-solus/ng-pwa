@@ -13,8 +13,8 @@ export class ProductService {  private products: Product[] = [
       price: 299.99,
       originalPrice: 399.99,
       images: [
-        'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600',
-        'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600'
+        'images/1.jpg',
+        'images/2.jpg'
       ],
       category: { id: 'mattresses', name: 'Matelas', slug: 'matelas' },
       ageRange: { min: 0, max: 24, label: '0-2 ans' },
@@ -27,13 +27,12 @@ export class ProductService {  private products: Product[] = [
       dimensions: { length: 52, width: 28, height: 6, weight: 8.5 }
     },
     {
-      id: '2',
-      name: 'Lit Bébé Évolutif Snuggle Pod',
+      id: '2',      name: 'Lit Bébé Évolutif Snuggle Pod',
       description: 'Lit moderne convertible qui grandit avec votre bébé.',
       price: 649.99,
       images: [
-        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600',
-        'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600'
+        'images/3.jpg',
+        'images/4.jpg'
       ],
       category: { id: 'cribs', name: 'Lits', slug: 'lits' },
       ageRange: { min: 0, max: 48, label: '0-4 ans' },
@@ -46,12 +45,11 @@ export class ProductService {  private products: Product[] = [
       dimensions: { length: 54, width: 30, height: 41, weight: 45 }
     },
     {
-      id: '3',
-      name: 'Veilleuse Musicale SleepyTime',
+      id: '3',      name: 'Veilleuse Musicale SleepyTime',
       description: 'Sons apaisants pour aider votre bébé à s\'endormir paisiblement.',
       price: 49.99,
       images: [
-        'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600'
+        'images/5.jpg'
       ],
       category: { id: 'accessories', name: 'Accessoires de Sommeil', slug: 'accessoires' },
       ageRange: { min: 0, max: 36, label: '0-3 ans' },
@@ -63,12 +61,11 @@ export class ProductService {  private products: Product[] = [
       safetyRating: 'CE Certifié'
     },
     {
-      id: '4',
-      name: 'Couverture Bébé CloudSoft',
+      id: '4',      name: 'Couverture Bébé CloudSoft',
       description: 'Couverture ultra-douce en coton biologique pour un sommeil douillet.',
       price: 34.99,
       images: [
-        'https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600'
+        'images/6.jpg'
       ],
       category: { id: 'bedding', name: 'Literie', slug: 'literie' },
       ageRange: { min: 0, max: 24, label: '0-2 ans' },
@@ -80,12 +77,11 @@ export class ProductService {  private products: Product[] = [
       safetyRating: 'OEKO-TEX Standard'
     },
     {
-      id: '5',
-      name: 'Mobile Musical Étoiles et Lune',
+      id: '5',      name: 'Mobile Musical Étoiles et Lune',
       description: 'Mobile rotatif avec mélodies douces et projection d\'étoiles apaisante.',
       price: 89.99,
       images: [
-        'https://images.unsplash.com/photo-1573462927055-1d35fe00f44f?w=600'
+        'images/7.jpg'
       ],
       category: { id: 'accessories', name: 'Accessoires de Sommeil', slug: 'accessoires' },
       ageRange: { min: 0, max: 12, label: '0-1 an' },
@@ -97,12 +93,11 @@ export class ProductService {  private products: Product[] = [
       safetyRating: 'EN 71 Certifié'
     },
     {
-      id: '6',
-      name: 'Oreiller Ergonomique Nouveau-né',
+      id: '6',      name: 'Oreiller Ergonomique Nouveau-né',
       description: 'Oreiller spécialement conçu pour soutenir la tête et le cou des nouveau-nés.',
       price: 45.99,
       images: [
-        'https://images.unsplash.com/photo-1586244439413-bc2288941dda?w=600'
+        'images/8.jpg'
       ],
       category: { id: 'bedding', name: 'Literie', slug: 'literie' },
       ageRange: { min: 0, max: 6, label: '0-6 mois' },
@@ -114,13 +109,12 @@ export class ProductService {  private products: Product[] = [
       safetyRating: 'CPSC Approuvé'
     },
     {
-      id: '7',
-      name: 'Gigoteuse 4 Saisons Premium',
+      id: '7',      name: 'Gigoteuse 4 Saisons Premium',
       description: 'Gigoteuse évolutive adaptée à toutes les saisons avec régulation thermique.',
       price: 79.99,
       originalPrice: 99.99,
       images: [
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600'
+        'images/9.jpg'
       ],
       category: { id: 'bedding', name: 'Literie', slug: 'literie' },
       ageRange: { min: 0, max: 36, label: '0-3 ans' },
@@ -132,12 +126,11 @@ export class ProductService {  private products: Product[] = [
       safetyRating: 'TOG 2.5 Certifié'
     },
     {
-      id: '8',
-      name: 'Moniteur de Sommeil Intelligent',
+      id: '8',      name: 'Moniteur de Sommeil Intelligent',
       description: 'Capteur de surveillance du sommeil avec notifications smartphone.',
       price: 199.99,
       images: [
-        'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600'
+        'images/10.jpg'
       ],
       category: { id: 'accessories', name: 'Accessoires de Sommeil', slug: 'accessoires' },
       ageRange: { min: 0, max: 24, label: '0-2 ans' },
@@ -149,12 +142,11 @@ export class ProductService {  private products: Product[] = [
       safetyRating: 'FDA Approuvé'
     },
     {
-      id: '9',
-      name: 'Veilleuse Projection Océan',
+      id: '9',      name: 'Veilleuse Projection Océan',
       description: 'Projecteur d\'ambiance marine avec sons de vagues pour un sommeil paisible.',
       price: 65.99,
       images: [
-        'https://images.unsplash.com/photo-1418225043143-90858d2301b4?w=600'
+        'images/11.jpg'
       ],
       category: { id: 'accessories', name: 'Accessoires de Sommeil', slug: 'accessoires' },
       ageRange: { min: 0, max: 60, label: '0-5 ans' },
@@ -166,12 +158,11 @@ export class ProductService {  private products: Product[] = [
       safetyRating: 'CE Marqué'
     },
     {
-      id: '10',
-      name: 'Matelas Couffin Biologique',
+      id: '10',      name: 'Matelas Couffin Biologique',
       description: 'Matelas parfaitement adapté aux couffins et berceaux, 100% naturel.',
       price: 129.99,
       images: [
-        'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600'
+        'images/12.jpg'
       ],
       category: { id: 'mattresses', name: 'Matelas', slug: 'matelas' },
       ageRange: { min: 0, max: 6, label: '0-6 mois' },

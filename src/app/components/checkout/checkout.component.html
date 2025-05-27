@@ -1,10 +1,10 @@
-<div class="min-h-screen bg-baby-pink-50 dark:bg-gray-900 py-8">
+<div class="min-h-screen bg-brand-cloud/30 dark:bg-brand-midnight py-8">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Page Header -->
     <div class="text-center mb-8">
-      <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Commande</h1>
-      <p class="mt-2 text-gray-600 dark:text-gray-300">Complétez votre commande en quelques étapes</p>
+      <h1 class="text-3xl font-bold text-brand-midnight dark:text-brand-white">Commande</h1>
+      <p class="mt-2 text-brand-charcoal dark:text-brand-cloud">Complétez votre commande en quelques étapes</p>
     </div>    <!-- Progress Steps -->
     <div class="mb-8">
       <nav aria-label="Progress">
@@ -15,11 +15,11 @@
               class="group flex items-center">
               <span
                 class="flex items-center justify-center w-10 h-10 rounded-full border-2 transition-colors"
-                [class.bg-primary-600]="step <= currentStep"
-                [class.border-primary-600]="step <= currentStep"
-                [class.text-white]="step <= currentStep"
-                [class.border-gray-300]="step > currentStep"
-                [class.text-gray-500]="step > currentStep">
+                [class.bg-brand-eucalyptus]="step <= currentStep"
+                [class.border-brand-eucalyptus]="step <= currentStep"
+                [class.text-brand-white]="step <= currentStep"
+                [class.border-brand-charcoal]="step > currentStep"
+                [class.text-brand-charcoal]="step > currentStep">
                 <svg *ngIf="step < currentStep" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                 </svg>
@@ -28,12 +28,12 @@
                 </svg>
               </span>
               <span class="ml-3 text-sm font-medium hidden md:block"
-                    [class.text-primary-600]="step <= currentStep"
-                    [class.text-gray-500]="step > currentStep">
+                    [class.text-brand-eucalyptus]="step <= currentStep"
+                    [class.text-brand-charcoal]="step > currentStep">
                 {{ getStepTitle(step) }}
               </span>
             </button>
-            <svg *ngIf="i < 2" class="w-5 h-5 text-gray-300 ml-4 md:ml-8" fill="currentColor" viewBox="0 0 20 20">
+            <svg *ngIf="i < 2" class="w-5 h-5 text-brand-charcoal/30 ml-4 md:ml-8" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
             </svg>
           </li>
@@ -43,50 +43,48 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">      <!-- Main Form Content -->
       <div class="lg:col-span-2">
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
-
-          <!-- Step 1: Combined Shipping and Billing Information -->
+        <div class="bg-brand-white dark:bg-brand-charcoal rounded-lg shadow-sm p-6">          <!-- Step 1: Combined Shipping and Billing Information -->
           <div *ngIf="currentStep === 1">
-            <h2 class="text-xl font-semibold mb-6 text-gray-900 dark:text-white">Informations de Livraison et Facturation</h2>
+            <h2 class="text-xl font-semibold mb-6 text-brand-midnight dark:text-brand-white">Informations de Livraison et Facturation</h2>
 
             <!-- Shipping Information -->
             <div class="mb-8">
-              <h3 class="text-lg font-medium mb-4 text-gray-900 dark:text-white">Adresse de Livraison</h3>
+              <h3 class="text-lg font-medium mb-4 text-brand-midnight dark:text-brand-white">Adresse de Livraison</h3>
               <form class="space-y-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Prénom</label>
-                    <input type="text" [(ngModel)]="shippingAddress.firstName" name="firstName" required class="input-field w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white">
+                    <label class="block text-sm font-medium text-brand-charcoal dark:text-brand-cloud mb-2">Prénom</label>
+                    <input type="text" [(ngModel)]="shippingAddress.firstName" name="firstName" required class="input-field w-full bg-brand-white dark:bg-brand-charcoal border-brand-charcoal/30 dark:border-brand-cloud/30 text-brand-midnight dark:text-brand-white">
                   </div>
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nom</label>
-                    <input type="text" [(ngModel)]="shippingAddress.lastName" name="lastName" required class="input-field w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white">
+                    <label class="block text-sm font-medium text-brand-charcoal dark:text-brand-cloud mb-2">Nom</label>
+                    <input type="text" [(ngModel)]="shippingAddress.lastName" name="lastName" required class="input-field w-full bg-brand-white dark:bg-brand-charcoal border-brand-charcoal/30 dark:border-brand-cloud/30 text-brand-midnight dark:text-brand-white">
                   </div>
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Adresse Email</label>
-                  <input type="email" [(ngModel)]="shippingAddress.email" name="email" required class="input-field w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white">
+                  <label class="block text-sm font-medium text-brand-charcoal dark:text-brand-cloud mb-2">Adresse Email</label>
+                  <input type="email" [(ngModel)]="shippingAddress.email" name="email" required class="input-field w-full bg-brand-white dark:bg-brand-charcoal border-brand-charcoal/30 dark:border-brand-cloud/30 text-brand-midnight dark:text-brand-white">
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Numéro de Téléphone</label>
-                  <input type="tel" [(ngModel)]="shippingAddress.phone" name="phone" class="input-field w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white">
+                  <label class="block text-sm font-medium text-brand-charcoal dark:text-brand-cloud mb-2">Numéro de Téléphone</label>
+                  <input type="tel" [(ngModel)]="shippingAddress.phone" name="phone" class="input-field w-full bg-brand-white dark:bg-brand-charcoal border-brand-charcoal/30 dark:border-brand-cloud/30 text-brand-midnight dark:text-brand-white">
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Adresse</label>
-                  <input type="text" [(ngModel)]="shippingAddress.address" name="address" required class="input-field w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white">
+                  <label class="block text-sm font-medium text-brand-charcoal dark:text-brand-cloud mb-2">Adresse</label>
+                  <input type="text" [(ngModel)]="shippingAddress.address" name="address" required class="input-field w-full bg-brand-white dark:bg-brand-charcoal border-brand-charcoal/30 dark:border-brand-cloud/30 text-brand-midnight dark:text-brand-white">
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Ville</label>
-                    <input type="text" [(ngModel)]="shippingAddress.city" name="city" required class="input-field w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white">
+                    <label class="block text-sm font-medium text-brand-charcoal dark:text-brand-cloud mb-2">Ville</label>
+                    <input type="text" [(ngModel)]="shippingAddress.city" name="city" required class="input-field w-full bg-brand-white dark:bg-brand-charcoal border-brand-charcoal/30 dark:border-brand-cloud/30 text-brand-midnight dark:text-brand-white">
                   </div>
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Région</label>
-                    <select [(ngModel)]="shippingAddress.state" name="state" required class="input-field w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white">
+                    <label class="block text-sm font-medium text-brand-charcoal dark:text-brand-cloud mb-2">Région</label>
+                    <select [(ngModel)]="shippingAddress.state" name="state" required class="input-field w-full bg-brand-white dark:bg-brand-charcoal border-brand-charcoal/30 dark:border-brand-cloud/30 text-brand-midnight dark:text-brand-white">
                       <option value="">Sélectionnez une région</option>
                       <option value="IDF">Île-de-France</option>
                       <option value="PACA">Provence-Alpes-Côte d'Azur</option>
@@ -97,58 +95,57 @@
                       <option value="GE">Grand Est</option>
                       <option value="BFC">Bourgogne-Franche-Comté</option>
                       <option value="NOR">Normandie</option>
-                      <option value="BRE">Bretagne</option>
-                      <option value="PDL">Pays de la Loire</option>
+                      <option value="BRE">Bretagne</option>                      <option value="PDL">Pays de la Loire</option>
                       <option value="CVL">Centre-Val de Loire</option>
                     </select>
                   </div>
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Code Postal</label>
-                    <input type="text" [(ngModel)]="shippingAddress.zipCode" name="zipCode" required class="input-field w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white">
+                    <label class="block text-sm font-medium text-brand-charcoal dark:text-brand-cloud mb-2">Code Postal</label>
+                    <input type="text" [(ngModel)]="shippingAddress.zipCode" name="zipCode" required class="input-field w-full bg-brand-white dark:bg-brand-charcoal border-brand-charcoal/30 dark:border-brand-cloud/30 text-brand-midnight dark:text-brand-white">
                   </div>
                 </div>
 
                 <div class="flex items-center mt-6">
-                  <input type="checkbox" [(ngModel)]="newsletterSignup" name="newsletter" class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 dark:border-gray-600 rounded">
-                  <label class="ml-2 text-sm text-gray-700 dark:text-gray-300">S'inscrire à notre newsletter pour recevoir des offres exclusives</label>
+                  <input type="checkbox" [(ngModel)]="newsletterSignup" name="newsletter" class="h-4 w-4 text-brand-eucalyptus focus:ring-brand-eucalyptus border-brand-charcoal/30 dark:border-brand-cloud/30 rounded">
+                  <label class="ml-2 text-sm text-brand-charcoal dark:text-brand-cloud">S'inscrire à notre newsletter pour recevoir des offres exclusives</label>
                 </div>
               </form>
             </div>
 
             <!-- Billing Address -->
-            <div class="border-t border-gray-200 dark:border-gray-600 pt-8">
-              <h3 class="text-lg font-medium mb-4 text-gray-900 dark:text-white">Adresse de Facturation</h3>
+            <div class="border-t border-brand-charcoal/20 dark:border-brand-cloud/20 pt-8">
+              <h3 class="text-lg font-medium mb-4 text-brand-midnight dark:text-brand-white">Adresse de Facturation</h3>
 
               <div class="flex items-center mb-6">
-                <input type="checkbox" [(ngModel)]="sameAsShipping" (change)="onSameAsShippingChange()" name="sameAsShipping" class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 dark:border-gray-600 rounded">
-                <label class="ml-2 text-sm text-gray-700 dark:text-gray-300">Identique à l'adresse de livraison</label>
+                <input type="checkbox" [(ngModel)]="sameAsShipping" (change)="onSameAsShippingChange()" name="sameAsShipping" class="h-4 w-4 text-brand-eucalyptus focus:ring-brand-eucalyptus border-brand-charcoal/30 dark:border-brand-cloud/30 rounded">
+                <label class="ml-2 text-sm text-brand-charcoal dark:text-brand-cloud">Identique à l'adresse de livraison</label>
               </div>
 
               <form *ngIf="!sameAsShipping" class="space-y-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Prénom</label>
-                    <input type="text" [(ngModel)]="billingAddress.firstName" name="billingFirstName" required class="input-field w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white">
+                    <label class="block text-sm font-medium text-brand-charcoal dark:text-brand-cloud mb-2">Prénom</label>
+                    <input type="text" [(ngModel)]="billingAddress.firstName" name="billingFirstName" required class="input-field w-full bg-brand-white dark:bg-brand-charcoal border-brand-charcoal/30 dark:border-brand-cloud/30 text-brand-midnight dark:text-brand-white">
                   </div>
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nom</label>
-                    <input type="text" [(ngModel)]="billingAddress.lastName" name="billingLastName" required class="input-field w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white">
+                    <label class="block text-sm font-medium text-brand-charcoal dark:text-brand-cloud mb-2">Nom</label>
+                    <input type="text" [(ngModel)]="billingAddress.lastName" name="billingLastName" required class="input-field w-full bg-brand-white dark:bg-brand-charcoal border-brand-charcoal/30 dark:border-brand-cloud/30 text-brand-midnight dark:text-brand-white">
                   </div>
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Adresse</label>
-                  <input type="text" [(ngModel)]="billingAddress.address" name="billingAddress" required class="input-field w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white">
+                  <label class="block text-sm font-medium text-brand-charcoal dark:text-brand-cloud mb-2">Adresse</label>
+                  <input type="text" [(ngModel)]="billingAddress.address" name="billingAddress" required class="input-field w-full bg-brand-white dark:bg-brand-charcoal border-brand-charcoal/30 dark:border-brand-cloud/30 text-brand-midnight dark:text-brand-white">
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Ville</label>
-                    <input type="text" [(ngModel)]="billingAddress.city" name="billingCity" required class="input-field w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white">
+                    <label class="block text-sm font-medium text-brand-charcoal dark:text-brand-cloud mb-2">Ville</label>
+                    <input type="text" [(ngModel)]="billingAddress.city" name="billingCity" required class="input-field w-full bg-brand-white dark:bg-brand-charcoal border-brand-charcoal/30 dark:border-brand-cloud/30 text-brand-midnight dark:text-brand-white">
                   </div>
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Région</label>
-                    <select [(ngModel)]="billingAddress.state" name="billingState" required class="input-field w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white">
+                    <label class="block text-sm font-medium text-brand-charcoal dark:text-brand-cloud mb-2">Région</label>
+                    <select [(ngModel)]="billingAddress.state" name="billingState" required class="input-field w-full bg-brand-white dark:bg-brand-charcoal border-brand-charcoal/30 dark:border-brand-cloud/30 text-brand-midnight dark:text-brand-white">
                       <option value="">Sélectionnez une région</option>
                       <option value="IDF">Île-de-France</option>
                       <option value="PACA">Provence-Alpes-Côte d'Azur</option>
@@ -165,49 +162,48 @@
                     </select>
                   </div>
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Code Postal</label>
-                    <input type="text" [(ngModel)]="billingAddress.zipCode" name="billingZip" required class="input-field w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white">
+                    <label class="block text-sm font-medium text-brand-charcoal dark:text-brand-cloud mb-2">Code Postal</label>
+                    <input type="text" [(ngModel)]="billingAddress.zipCode" name="billingZip" required class="input-field w-full bg-brand-white dark:bg-brand-charcoal border-brand-charcoal/30 dark:border-brand-cloud/30 text-brand-midnight dark:text-brand-white">
                   </div>
                 </div>
               </form>
 
-              <div *ngIf="sameAsShipping" class="bg-baby-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-                <p class="text-sm text-baby-blue-800 dark:text-blue-300">L'adresse de facturation sera identique à votre adresse de livraison.</p>
+              <div *ngIf="sameAsShipping" class="bg-brand-eucalyptus/10 dark:bg-brand-eucalyptus/20 p-4 rounded-lg">
+                <p class="text-sm text-brand-eucalyptus dark:text-brand-eucalyptus">L'adresse de facturation sera identique à votre adresse de livraison.</p>
               </div>
             </div>
           </div>          <!-- Step 2: Payment Method -->
           <div *ngIf="currentStep === 2">
-            <h2 class="text-xl font-semibold mb-6 text-gray-900 dark:text-white">Mode de Paiement</h2>
+            <h2 class="text-xl font-semibold mb-6 text-brand-midnight dark:text-brand-white">Mode de Paiement</h2>
 
             <div class="space-y-4">
-              <div class="bg-baby-blue-50 dark:bg-blue-900/20 p-4 rounded-lg mb-6">
+              <div class="bg-brand-eucalyptus/10 dark:bg-brand-eucalyptus/20 p-4 rounded-lg mb-6">
                 <div class="flex items-center">
-                  <svg class="w-6 h-6 text-baby-blue-600 dark:text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-6 h-6 text-brand-eucalyptus mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
                   </svg>
                   <div>
-                    <h3 class="font-medium text-baby-blue-800 dark:text-blue-300">Paiement à la Livraison</h3>
-                    <p class="text-sm text-baby-blue-700 dark:text-blue-400">Payez en espèces ou par carte lors de la livraison</p>
+                    <h3 class="font-medium text-brand-eucalyptus">Paiement à la Livraison</h3>
+                    <p class="text-sm text-brand-eucalyptus/80">Payez en espèces ou par carte lors de la livraison</p>
                   </div>
                 </div>
               </div>
 
-              <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-                <h4 class="font-medium text-gray-900 dark:text-white mb-2">Informations de Paiement</h4>
-                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+              <div class="bg-brand-cloud/20 dark:bg-brand-charcoal/50 p-4 rounded-lg">
+                <h4 class="font-medium text-brand-midnight dark:text-brand-white mb-2">Informations de Paiement</h4>
+                <ul class="text-sm text-brand-charcoal dark:text-brand-cloud space-y-1">
                   <li>• Paiement en espèces accepté</li>
                   <li>• Paiement par carte bancaire possible</li>
                   <li>• Aucun frais supplémentaire</li>
-                  <li>• Paiement sécurisé</li>
-                </ul>
+                  <li>• Paiement sécurisé</li>                </ul>
               </div>
 
-              <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+              <div class="bg-brand-terracotta/10 dark:bg-brand-terracotta/20 p-4 rounded-lg">
                 <div class="flex items-center">
-                  <svg class="w-5 h-5 text-green-600 dark:text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 text-brand-terracotta mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  <p class="text-sm text-green-800 dark:text-green-300">
+                  <p class="text-sm text-brand-terracotta">
                     <strong>Avantage :</strong> Vous pouvez inspecter vos produits avant de payer
                   </p>
                 </div>
@@ -215,38 +211,38 @@
             </div>
           </div>          <!-- Step 3: Review Order -->
           <div *ngIf="currentStep === 3">
-            <h2 class="text-xl font-semibold mb-6 text-gray-900 dark:text-white">Vérification de Votre Commande</h2>
+            <h2 class="text-xl font-semibold mb-6 text-brand-midnight dark:text-brand-white">Vérification de Votre Commande</h2>
 
             <!-- Order Items -->
             <div class="space-y-4 mb-6">
-              <div *ngFor="let item of basketItems" class="flex items-center space-x-4 py-4 border-b border-gray-200 dark:border-gray-600">
+              <div *ngFor="let item of basketItems" class="flex items-center space-x-4 py-4 border-b border-brand-charcoal/20 dark:border-brand-cloud/20">
                 <img [src]="item.product.images[0]" [alt]="item.product.name" class="w-16 h-16 object-cover rounded-lg">
                 <div class="flex-1">
-                  <h4 class="font-medium text-gray-900 dark:text-white">{{ item.product.name }}</h4>
-                  <p class="text-sm text-gray-600 dark:text-gray-400">Quantité: {{ item.quantity }}</p>
+                  <h4 class="font-medium text-brand-midnight dark:text-brand-white">{{ item.product.name }}</h4>
+                  <p class="text-sm text-brand-charcoal dark:text-brand-cloud">Quantité: {{ item.quantity }}</p>
                 </div>
                 <div class="text-right">
-                  <p class="font-medium text-gray-900 dark:text-white">{{ item.product.price * item.quantity }}€</p>
+                  <p class="font-medium text-brand-midnight dark:text-brand-white">{{ item.product.price * item.quantity }}€</p>
                 </div>
               </div>
             </div>
 
             <!-- Addresses Review -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-                <h4 class="font-medium text-gray-900 dark:text-white mb-2">Adresse de Livraison</h4>
-                <p class="text-sm text-gray-600 dark:text-gray-300">
+              <div class="bg-brand-cloud/20 dark:bg-brand-charcoal/50 p-4 rounded-lg">
+                <h4 class="font-medium text-brand-midnight dark:text-brand-white mb-2">Adresse de Livraison</h4>
+                <p class="text-sm text-brand-charcoal dark:text-brand-cloud">
                   {{ shippingAddress.firstName }} {{ shippingAddress.lastName }}<br>
                   {{ shippingAddress.address }}<br>
                   {{ shippingAddress.city }}, {{ shippingAddress.state }} {{ shippingAddress.zipCode }}
                 </p>
               </div>
 
-              <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-                <h4 class="font-medium text-gray-900 dark:text-white mb-2">Mode de Paiement</h4>
-                <div class="text-sm text-gray-600 dark:text-gray-300">
+              <div class="bg-brand-cloud/20 dark:bg-brand-charcoal/50 p-4 rounded-lg">
+                <h4 class="font-medium text-brand-midnight dark:text-brand-white mb-2">Mode de Paiement</h4>
+                <div class="text-sm text-brand-charcoal dark:text-brand-cloud">
                   <div class="flex items-center">
-                    <svg class="w-4 h-4 mr-2 text-baby-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 mr-2 text-brand-eucalyptus" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
                     </svg>
                     <p>Paiement à la Livraison</p>
@@ -257,27 +253,27 @@
 
             <!-- Terms -->
             <div class="flex items-start mb-6">
-              <input type="checkbox" [(ngModel)]="termsAccepted" name="terms" required class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 dark:border-gray-600 rounded mt-1">
-              <label class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-                J'accepte les <a href="#" class="text-primary-600 hover:text-primary-700 dark:text-primary-400">Conditions d'Utilisation</a> et la <a href="#" class="text-primary-600 hover:text-primary-700 dark:text-primary-400">Politique de Confidentialité</a>
+              <input type="checkbox" [(ngModel)]="termsAccepted" name="terms" required class="h-4 w-4 text-brand-eucalyptus focus:ring-brand-eucalyptus border-brand-charcoal/30 dark:border-brand-cloud/30 rounded mt-1">
+              <label class="ml-2 text-sm text-brand-charcoal dark:text-brand-cloud">
+                J'accepte les <a href="#" class="text-brand-eucalyptus hover:text-brand-terracotta">Conditions d'Utilisation</a> et la <a href="#" class="text-brand-eucalyptus hover:text-brand-terracotta">Politique de Confidentialité</a>
               </label>
             </div>
           </div>          <!-- Step 4: Order Complete -->
           <div *ngIf="currentStep === 4 && orderComplete" class="text-center py-8">
-            <div class="w-16 h-16 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-16 h-16 bg-brand-terracotta/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-brand-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
             </div>
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Commande Terminée !</h2>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Merci pour votre achat. Votre numéro de commande est :</p>
-            <p class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-6">{{ orderNumber }}</p>
-            <p class="text-gray-600 dark:text-gray-300 mb-8">Nous vous enverrons un email de confirmation avec les informations de suivi une fois votre commande expédiée.</p>
+            <h2 class="text-2xl font-bold text-brand-midnight dark:text-brand-white mb-2">Commande Terminée !</h2>
+            <p class="text-brand-charcoal dark:text-brand-cloud mb-4">Merci pour votre achat. Votre numéro de commande est :</p>
+            <p class="text-2xl font-bold text-brand-eucalyptus mb-6">{{ orderNumber }}</p>
+            <p class="text-brand-charcoal dark:text-brand-cloud mb-8">Nous vous enverrons un email de confirmation avec les informations de suivi une fois votre commande expédiée.</p>
             <button (click)="continueShopping()" class="btn-primary">
               Continuer les Achats
             </button>
           </div>          <!-- Navigation Buttons -->
-          <div *ngIf="currentStep < 4" class="flex justify-between pt-6 border-t border-gray-200 dark:border-gray-600">
+          <div *ngIf="currentStep < 4" class="flex justify-between pt-6 border-t border-brand-charcoal/20 dark:border-brand-cloud/20">
             <button
               *ngIf="currentStep > 1"
               (click)="prevStep()"
@@ -312,48 +308,48 @@
 
       <!-- Order Summary Sidebar -->
       <div class="lg:col-span-1">
-        <div class="bg-white rounded-lg shadow-sm p-6 sticky top-4">
-          <h3 class="text-lg font-semibold text-gray-900 mb-4">Order Summary</h3>
+        <div class="bg-brand-white dark:bg-brand-charcoal rounded-lg shadow-sm p-6 sticky top-4">
+          <h3 class="text-lg font-semibold text-brand-midnight dark:text-brand-white mb-4">Résumé de Commande</h3>
 
           <!-- Items -->          <div class="space-y-3 mb-4">
             <div *ngFor="let item of basketItems" class="flex items-center space-x-3">
               <img [src]="item.product.images[0]" [alt]="item.product.name" class="w-12 h-12 object-cover rounded">
               <div class="flex-1 min-w-0">
-                <p class="text-sm font-medium text-gray-900 truncate">{{ item.product.name }}</p>
-                <p class="text-sm text-gray-500">Qty: {{ item.quantity }}</p>
+                <p class="text-sm font-medium text-brand-midnight dark:text-brand-white truncate">{{ item.product.name }}</p>
+                <p class="text-sm text-brand-charcoal/70 dark:text-brand-cloud/70">Qté: {{ item.quantity }}</p>
               </div>
-              <p class="text-sm font-medium text-gray-900">${{ item.product.price * item.quantity }}</p>
+              <p class="text-sm font-medium text-brand-midnight dark:text-brand-white">${{ item.product.price * item.quantity }}</p>
             </div>
           </div>
 
           <!-- Totals -->
-          <div class="border-t border-gray-200 pt-4 space-y-2">
+          <div class="border-t border-brand-charcoal/20 dark:border-brand-cloud/20 pt-4 space-y-2">
             <div class="flex justify-between text-sm">
-              <span class="text-gray-600">Subtotal</span>
-              <span class="text-gray-900">${{ subtotal.toFixed(2) }}</span>
+              <span class="text-brand-charcoal dark:text-brand-cloud">Sous-total</span>
+              <span class="text-brand-midnight dark:text-brand-white">${{ subtotal.toFixed(2) }}</span>
             </div>
             <div class="flex justify-between text-sm">
-              <span class="text-gray-600">Shipping</span>
-              <span class="text-gray-900">${{ shipping.toFixed(2) }}</span>
+              <span class="text-brand-charcoal dark:text-brand-cloud">Livraison</span>
+              <span class="text-brand-midnight dark:text-brand-white">${{ shipping.toFixed(2) }}</span>
             </div>
             <div class="flex justify-between text-sm">
-              <span class="text-gray-600">Tax</span>
-              <span class="text-gray-900">${{ tax.toFixed(2) }}</span>
+              <span class="text-brand-charcoal dark:text-brand-cloud">Taxes</span>
+              <span class="text-brand-midnight dark:text-brand-white">${{ tax.toFixed(2) }}</span>
             </div>
-            <div class="border-t border-gray-200 pt-2">
+            <div class="border-t border-brand-charcoal/20 dark:border-brand-cloud/20 pt-2">
               <div class="flex justify-between text-base font-medium">
-                <span class="text-gray-900">Total</span>
-                <span class="text-gray-900">${{ total.toFixed(2) }}</span>
+                <span class="text-brand-midnight dark:text-brand-white">Total</span>
+                <span class="text-brand-eucalyptus font-bold">${{ total.toFixed(2) }}</span>
               </div>
             </div>
           </div>
 
           <!-- Security Notice -->
-          <div class="mt-6 flex items-center text-sm text-gray-500">
+          <div class="mt-6 flex items-center text-sm text-brand-charcoal/70 dark:text-brand-cloud/70">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
             </svg>
-            Secure checkout
+            Commande sécurisée
           </div>
         </div>
       </div>

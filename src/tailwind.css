@@ -4,6 +4,32 @@
 
 /* Baby Sleep E-commerce App - Custom Styles */
 
+/* Custom CSS Color Variables */
+@layer base {
+  :root {
+    --color-primary-midnight: #2C3E50;
+    --color-primary-charcoal: #36454F;
+    --color-primary-white: #FFFFFF;
+    --color-accent-terracotta: #65837a;
+    --color-accent-eucalyptus: #7fc2b9;
+    --color-accent-clay: #f8b7a0;
+    --color-accent-cloud: #D3D3D3;
+    --color-warning-red: #ab7e6e;
+  }
+
+  /* Apply Poppins font globally */
+  html {
+    font-family: 'Poppins', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+}
+
 /* Custom Keyframes */
 @keyframes fadeIn {
   0% { opacity: 0; }

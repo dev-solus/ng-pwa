@@ -5,8 +5,7 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {
-      colors: {
+    extend: {      colors: {
         primary: {
           50: '#e6f9fb',
           100: '#ccf3f6',
@@ -19,6 +18,15 @@ module.exports = {
           800: '#004247',
           900: '#002124',
         },
+        // Custom brand colors using CSS variables
+        'brand-midnight': 'var(--color-primary-midnight)',
+        'brand-charcoal': 'var(--color-primary-charcoal)',
+        'brand-white': 'var(--color-primary-white)',
+        'brand-terracotta': 'var(--color-accent-terracotta)',
+        'brand-eucalyptus': 'var(--color-accent-eucalyptus)',
+        'brand-clay': 'var(--color-accent-clay)',
+        'brand-cloud': 'var(--color-accent-cloud)',
+        'brand-warning': 'var(--color-warning-red)',
         'baby-pink': {
           50: '#fdf2f8',
           100: '#fce7f3',
@@ -66,11 +74,10 @@ module.exports = {
           700: '#047857',
           800: '#065f46',
           900: '#064e3b',
-        }
-      },
+        }      },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-      },      animation: {
+        sans: ['Poppins', 'system-ui', 'sans-serif'],
+      },animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-in-right': 'slideInRight 0.3s ease-out',
         'slide-out-right': 'slideOutRight 0.3s ease-in',
