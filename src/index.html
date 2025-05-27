@@ -1,13 +1,136 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Pwa</title>
+  <title>BébéDodo - Produits de Sommeil Premium pour Bébé | Sécurité & Confort</title>
+  <meta name="description" content="Découvrez notre collection premium de produits de sommeil pour bébé. Matelas bio, machines à sons, lits évolutifs certifiés par les pédiatres. Livraison 24h, garantie 2 ans.">
+  <meta name="keywords" content="sommeil bébé, matelas bébé bio, produits sommeil enfant, lit bébé sécurisé, machine sons bébé, pédiatre recommandé">
+  <meta name="author" content="BébéDodo">
+  <meta name="robots" content="index, follow">
+
+  <!-- Viewport and Base -->
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicons and PWA -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#1976d2">
+  <meta name="theme-color" content="#ec4899">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="BébéDodo">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mi-lune.dev-solus.com/">
+  <meta property="og:title" content="BébéDodo - Produits de Sommeil Premium pour Bébé">
+  <meta property="og:description" content="Découvrez notre collection premium de produits de sommeil pour bébé. Matelas bio, machines à sons, lits évolutifs certifiés par les pédiatres. Livraison 24h, garantie 2 ans.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=1200&h=630&fit=crop&crop=center">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bébé dormant paisiblement dans un couffin - BébéDodo">
+  <meta property="og:site_name" content="BébéDodo">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://mi-lune.dev-solus.com/">
+  <meta name="twitter:title" content="BébéDodo - Produits de Sommeil Premium pour Bébé">
+  <meta name="twitter:description" content="Découvrez notre collection premium de produits de sommeil pour bébé. Matelas bio, machines à sons, lits évolutifs certifiés par les pédiatres.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=1200&h=630&fit=crop&crop=center">
+  <meta name="twitter:image:alt" content="Bébé dormant paisiblement dans un couffin - BébéDodo">
+
+  <!-- Additional SEO Meta Tags -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-TileColor" content="#ec4899">
+  <meta name="msapplication-config" content="browserconfig.xml">
+
+  <!-- Structured Data - JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "BébéDodo",
+    "description": "Boutique en ligne spécialisée dans les produits de sommeil premium pour bébé",
+    "url": "https://bebedodo.fr",
+    "logo": "https://mi-lune.dev-solus.com/icons/icon-512x512.png",
+    "image": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=1200&h=630&fit=crop&crop=center",
+    "telephone": "+33-1-23-45-67-89",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Rue des Bébés",
+      "addressLocality": "Paris",
+      "postalCode": "75001",
+      "addressCountry": "FR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "48.8566",
+      "longitude": "2.3522"
+    },
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "priceRange": "€€",
+    "acceptedPaymentMethod": [
+      "http://purl.org/goodrelations/v1#ByBankTransferInAdvance",
+      "http://purl.org/goodrelations/v1#ByInvoice",
+      "http://purl.org/goodrelations/v1#Cash",
+      "http://purl.org/goodrelations/v1#CheckInAdvance",
+      "http://purl.org/goodrelations/v1#COD",
+      "http://purl.org/goodrelations/v1#DirectDebit",
+      "http://purl.org/goodrelations/v1#GoogleCheckout",
+      "http://purl.org/goodrelations/v1#PayPal",
+      "http://purl.org/goodrelations/v1#PaySwarm"
+    ],
+    "currenciesAccepted": "EUR",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Produits de Sommeil pour Bébé",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Matelas Bio Premium",
+            "category": "Matelas Bébé"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Machine à Sons Douce",
+            "category": "Accessoires Sommeil"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Lit Évolutif Moderne",
+            "category": "Mobilier Bébé"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://mi-lune.dev-solus.com/">
+
+  <!-- Preconnect for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://images.unsplash.com">
+
+  <!-- Alternative Languages -->
+  <link rel="alternate" hreflang="fr" href="https://mi-lune.dev-solus.com/">
+  <link rel="alternate" hreflang="en" href="https://mi-lune.dev-solus.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://mi-lune.dev-solus.com/">
+
+  <!-- Cache Control -->
+  <meta http-equiv="Cache-Control" content="max-age=31536000">
+
+  <!-- Tailwind CSS -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 <body>
