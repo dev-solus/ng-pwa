@@ -1,0 +1,21 @@
+// Background pattern classes for avoiding Angular template issues with inline SVG URLs
+
+.hero-pattern {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%236366f1" fill-opacity="0.15"><path d="M40 40c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm20-20c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z"/></g></g></svg>');
+}
+
+.features-pattern {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="%236366f1" fill-opacity="0.05"><path d="M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z"/></g></svg>');
+}
+
+.products-pattern {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><g fill-rule="evenodd"><g fill="%23f59e0b" fill-opacity="0.1"><circle cx="25" cy="25" r="4"/><circle cx="25" cy="5" r="2"/><circle cx="25" cy="45" r="2"/><circle cx="5" cy="25" r="2"/><circle cx="45" cy="25" r="2"/></g></svg>');
+}
+
+.testimonials-pattern {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g fill-rule="evenodd"><g fill="%239f7aea" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></svg>');
+}
+
+.partners-pattern {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><g fill-rule="evenodd"><g fill="%2310b981" fill-opacity="0.1"><polygon points="20,0 40,20 20,40 0,20"/></g></svg>');
+}

@@ -28,6 +28,8 @@ interface Partner {
 export class HomeComponent implements OnInit {
   bestProducts: Product[] = [];
   searchTerm = '';
+  isLoading = true;
+
   testimonials: Testimonial[] = [
     {
       name: 'Sarah Dupont',

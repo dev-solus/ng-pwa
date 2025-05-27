@@ -11,6 +11,7 @@ COPY .editorconfig .
 COPY angular.json .
 # COPY server.ts .
 COPY tailwind.config.js .
+COPY ngsw-config.json .
 COPY tsconfig*.json ./
 
 RUN npm run prod
