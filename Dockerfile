@@ -6,6 +6,7 @@ COPY package*.json ./
 
 RUN npm i --force
 
+COPY public public
 COPY src src
 COPY .editorconfig .
 COPY angular.json .
